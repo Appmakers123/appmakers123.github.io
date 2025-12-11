@@ -13,30 +13,24 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:#e5e7eb;
     }
 
-    /* Centered wheel container */
+    /* Container = just for centering, no visible circle */
     #wheel-container{
-      width:160px;
-      height:160px;
-      border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:transparent;
     }
 
-    /* Inner rolling wheel */
+    /* Only the logo itself, no outer circle */
     #wheel{
-      width:140px;
+      width:140px;          /* same as logo size */
       height:140px;
       border-radius:50%;
       object-fit:cover;
       display:block;
-      box-shadow:0 0 18px rgba(251,191,36,0.9);
-      animation: spin 12s linear infinite;  /* continuous rolling */
+      animation: spin 12s linear infinite;
+      box-shadow:0 0 18px rgba(251,191,36,0.9); /* remove if you want zero glow */
     }
 
     @keyframes spin{
@@ -47,9 +41,8 @@
 </head>
 <body>
 
-  <!-- Centered rolling wheel -->
   <div id="wheel-container">
-    <!-- logop.jpg must be in the same folder as this HTML -->
+    <!-- logop.jpg must be the circular logo file -->
     <img id="wheel" src="logop.jpg" alt="CosmicSutra Wheel">
   </div>
 
