@@ -3,36 +3,394 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CosmicSutra Wheel</title>
-
+  <title>CosmicSutra — Vedic Astrology, Learning & Consultation</title>
+  <meta name="description" content="CosmicSutra offers structured Vedic astrology learning, occult sciences, and personalised consultations with practical, compassionate guidance." />
   <style>
+    :root{
+      --bg:#020617;
+      --bg-soft:#0b1220;
+      --primary:#facc15;
+      --accent:#f97316;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --card:#020617;
+      --border:#1f2937;
+      --maxw:1040px;
+    }
+    *{box-sizing:border-box}
     body{
       margin:0;
       min-height:100vh;
-      background:radial-gradient(circle at 20% 0,#111827 0,#020617 55%,#000 100%);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at 10% 0,#020617 0,#020617 40%,#000 100%);
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    a{color:var(--primary);}
+
+    header{
+      width:100%;
+      border-bottom:1px solid rgba(15,23,42,0.9);
+      background:linear-gradient(90deg,#020617,#030712,#020617);
+    }
+    .nav-wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:14px 18px;
       display:flex;
       align-items:center;
-      justify-content:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .brand-text h1{
+      margin:0;
+      font-size:1.15rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--primary);
+    }
+    .brand-text span{
+      font-size:0.8rem;
+      color:var(--muted);
+    }
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    nav a{
+      font-size:0.8rem;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);
+      text-decoration:none;
+    }
+    nav a:hover{
+      border-color:rgba(250,204,21,0.5);
+      color:var(--primary);
+      background:rgba(15,23,42,0.9);
     }
 
+    main{
+      width:100%;
+      flex:1;
+    }
+    .layout{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:26px 18px 40px;
+      display:grid;
+      grid-template-columns:minmax(0,1.8fr) minmax(0,1.4fr);
+      gap:24px;
+      align-items:start;
+    }
+
+    .logo-panel{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:14px;
+    }
     #wheel{
-      width:180px;
-      height:180px;
-      border-radius:50%;
+      width:190px;
+      height:190px;
+      border-radius:32px;
+      animation:spin 14s linear infinite;
       display:block;
-      animation: spin 14s linear infinite;
+      filter:drop-shadow(0 0 26px rgba(250,204,21,0.55));
     }
-
     @keyframes spin{
       from{ transform:rotate(0deg); }
       to{ transform:rotate(360deg); }
+    }
+    .hero-title{
+      font-size:1.4rem;
+      font-weight:600;
+    }
+    .hero-sub{
+      font-size:0.9rem;
+      color:var(--muted);
+      max-width:420px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(55,65,81,1);
+      font-size:0.78rem;
+      color:var(--muted);
+    }
+    .pill-dot{
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 8px rgba(248,113,113,0.9);
+    }
+
+    .card{
+      background:radial-gradient(circle at 0 0,#020617,#020617 30%,#020617 100%);
+      border-radius:18px;
+      border:1px solid var(--border);
+      padding:16px 16px 14px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.65);
+      margin-bottom:18px;
+    }
+    .card h2{
+      margin:0 0 6px;
+      font-size:1rem;
+      color:var(--primary);
+    }
+    .card p{
+      margin:0 0 10px;
+      font-size:0.88rem;
+      color:var(--muted);
+    }
+
+    .list{
+      margin:8px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size:0.86rem;
+    }
+    .list li{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      color:var(--text);
+    }
+    .dot{
+      margin-top:5px;
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:var(--primary);
+      box-shadow:0 0 10px rgba(250,204,21,0.7);
+      flex-shrink:0;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+    .btn{
+      padding:8px 14px;
+      border-radius:999px;
+      border:none;
+      font-size:0.85rem;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,#facc15,#f97316);
+      color:#111827;
+      box-shadow:0 10px 30px rgba(248,181,24,0.5);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid var(--border);
+    }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:6px;
+    }
+    .badge{
+      font-size:0.75rem;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(55,65,81,1);
+      color:var(--muted);
+    }
+
+    .faq-q{
+      font-size:0.86rem;
+      font-weight:500;
+      margin-bottom:2px;
+    }
+    .faq-a{
+      font-size:0.82rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    footer{
+      width:100%;
+      border-top:1px solid rgba(15,23,42,0.9);
+      padding:10px 18px 14px;
+      font-size:0.78rem;
+      color:var(--muted);
+      display:flex;
+      justify-content:center;
+    }
+    footer .inner{
+      max-width:var(--maxw);
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    @media (max-width:880px){
+      .layout{
+        grid-template-columns:minmax(0,1fr);
+      }
+      .logo-panel{
+        order:-1;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- SVG file is in repo root, so use relative path -->
-  <img id="wheel" src="./cosmic-sutra-logo.svg" alt="CosmicSutra Wheel">
+<header>
+  <div class="nav-wrap">
+    <div class="brand-text">
+      <h1>COSMICSUTRA</h1>
+      <span>Vedic Astrology • Occult Science • Guidance</span>
+    </div>
+    <nav>
+      <a href="#learning">Learning</a>
+      <a href="#consultation">Consultation</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="layout">
+    <!-- Left: content cards -->
+    <section>
+      <div class="card" id="learning">
+        <h2>Structured Learning Path</h2>
+        <p>Learn Vedic astrology step by step, from basics to prediction, with modern explanations rooted in classical texts.</p>
+        <ul class="list">
+          <li>
+            <div class="dot"></div>
+            <div>Foundations: signs, houses, grahas, and chart structure explained in clear, practical language.</div>
+          </li>
+          <li>
+            <div class="dot"></div>
+            <div>Yogas & dashas: how planetary combinations and timing reveal career, relationships, and spiritual themes.</div>
+          </li>
+          <li>
+            <div class="dot"></div>
+            <div>Occult tools: numerology and Tarot to validate intuition and support prediction.</div>
+          </li>
+        </ul>
+        <div class="cta-row">
+          <button class="btn btn-primary">Request detailed syllabus</button>
+          <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Ask a course question</button>
+        </div>
+      </div>
+
+      <div class="card" id="consultation">
+        <h2>Personal Consultation</h2>
+        <p>Receive a focused reading with timing, patterns, and practical remedies you can actually follow.</p>
+        <ul class="list">
+          <li>
+            <div class="dot"></div>
+            <div>Life overview: core karmic themes, strengths, and repeating cycles visible in your chart.</div>
+          </li>
+          <li>
+            <div class="dot"></div>
+            <div>Timing window: near‑term planetary periods for career moves, relationships, health, and finances.</div>
+          </li>
+          <li>
+            <div class="dot"></div>
+            <div>Remedies: mantra, lifestyle, and practical alignment suggestions — no fear‑based predictions.</div>
+          </li>
+        </ul>
+        <div class="badge-row">
+          <span class="badge">30 min focus reading</span>
+          <span class="badge">60 min deep dive</span>
+          <span class="badge">Online video / audio</span>
+        </div>
+      </div>
+
+      <div class="card" id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-q">What details do you need for a reading?</div>
+        <div class="faq-a">Date, exact time (as close as possible), and place of birth, plus 1–2 focus areas such as career, relationships, health, or spiritual direction.</div>
+
+        <div class="faq-q">How are sessions conducted?</div>
+        <div class="faq-a">Sessions are usually done online via video or audio call. A short written summary or recording link can be shared after the session when possible.</div>
+
+        <div class="faq-q">Do you guarantee specific events?</div>
+        <div class="faq-a">Astrology shows patterns, probabilities, and timing. Guidance is offered as support for conscious decisions, not as fatalistic guarantees.</div>
+      </div>
+
+      <div class="card" id="privacy">
+        <h2>Privacy & Ethics</h2>
+        <p>Your birth details and session notes are kept confidential and are never shared or sold. Only minimal contact information is stored for scheduling and follow‑up.</p>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;">This site may use basic analytics and advertising tools. By using the site, you consent to standard cookies and third‑party scripts used for performance and monetisation.</p>
+      </div>
+    </section>
+
+    <!-- Right: spinning logo + quick info -->
+    <aside class="logo-panel">
+      <img id="wheel" src="./cosmic-sutra-logo.svg" alt="CosmicSutra Wheel">
+      <div class="pill">
+        <span class="pill-dot"></span>
+        <span>Now taking limited readings for 2026</span>
+      </div>
+      <div class="hero-title">Read your chart like a map, not a mystery.</div>
+      <div class="hero-sub">
+        Learn how planets, houses, and dashas speak in your life — or book a guided session if you prefer done‑for‑you interpretation.
+      </div>
+
+      <div class="card" id="contact" style="margin-top:14px;width:100%;max-width:360px;">
+        <h2>Contact & Booking</h2>
+        <p>To request the course syllabus or book a consultation, send an email with:</p>
+        <ul class="list">
+          <li>
+            <div class="dot"></div>
+            <div>Full name and preferred language.</div>
+          </li>
+          <li>
+            <div class="dot"></div>
+            <div>Birth date, exact time, and place.</div>
+          </li>
+          <li>
+            <div class="dot"></div>
+            <div>1–2 focus areas (career, relationships, health, spiritual path, etc.).</div>
+          </li>
+        </ul>
+        <p style="margin-top:8px;font-size:0.86rem;">
+          Email: <a href="mailto:jyotishaurrahasya@gmail.com">jyotishaurrahasya@gmail.com</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="inner">
+    <span>© 2025 CosmicSutra • All rights reserved</span>
+    <span>Contact: <a href="mailto:jyotishaurrahasya@gmail.com">jyotishaurrahasya@gmail.com</a></span>
+  </div>
+</footer>
 
 </body>
 </html>
