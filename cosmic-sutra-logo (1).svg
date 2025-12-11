@@ -5,6 +5,14 @@
       @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
   </defs>
+
+  <!-- Circular Background -->
+<circle
+  cx="256"
+  cy="256"
+  r="256"
+  fill="#0f172a"
+/>
   
   <!-- Background (Optional, dark slate) -->
   <!-- <rect width="512" height="512" fill="#0f172a" rx="64" /> -->
