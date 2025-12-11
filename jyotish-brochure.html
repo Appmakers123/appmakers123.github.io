@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyotish Aur Rahasya Academy - Premium Prospectus</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0f0f 50%, #2d1b1b 100%);
+            color: #f4e8c1;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(255,215,0,0.1) 0%, transparent 50%), 
+                        radial-gradient(circle at 80% 20%, rgba(218,165,32,0.1) 0%, transparent 50%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23FFD700" opacity="0.3"/><path d="M20 20 Q50 0 80 20 Q100 50 80 80 Q50 100 20 80 Q0 50 20 20" stroke="%23DAA520" stroke-width="0.5" fill="none" opacity="0.2"/></svg>') repeat;
+            z-index: -1;
+            animation: mandalaRotate 20s linear infinite;
+        }
+        @keyframes mandalaRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; padding: 60px 0; }
+        h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 4rem); color: #FFD700; text-shadow: 0 0 20px #FFD700; margin: 0; letter-spacing: 2px; }
+        .tagline { font-size: 1.4rem; color: #DAA520; margin: 20px 0; font-style: italic; }
+        .contact { background: rgba(255,215,0,0.1); border: 2px solid #FFD700; border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 400px; backdrop-filter: blur(10px); }
+        .contact h3 { color: #FFD700; margin: 0 0 10px; }
+        .contact a { color: #f4e8c1; text-decoration: none; font-weight: 600; }
+        .contact a:hover { color: #FFD700; }
+        section { margin: 60px 0; }
+        h2 { font-family: 'Cinzel', serif; font-size: 2.2rem; color: #FFD700; text-align: center; margin-bottom: 30px; position: relative; }
+        h2::after { content: ''; display: block; width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 10px auto; }
+        .overview { font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto; }
+        .courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .course { background: rgba(218,165,32,0.1); border: 1px solid rgba(255,215,0,0.3); border-radius: 20px; padding: 30px; backdrop-filter: blur(10px); transition: all 0.3s ease; }
+        .course:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255,215,0,0.2); border-color: #FFD700; }
+        .course h3 { color: #FFD700; font-size: 1.6rem; margin-bottom: 15px; }
+        .modules { list-style: none; padding: 0; }
+        .modules li { padding: 8px 0; border-left: 3px solid #DAA520; padding-left: 15px; margin: 5px 0; }
+        .fees { background: rgba(0,0,0,0.5); border: 1px solid #DAA520; border-radius: 10px; padding: 20px; text-align: center; }
+        .fee-item { display: inline-block; margin: 10px 20px; font-size: 1.1rem; }
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .benefit { text-align: center; padding: 20px; background: rgba(255,215,0,0.05); border-radius: 10px; }
+        .enroll { text-align: center; background: linear-gradient(135deg, #FFD700, #DAA520); color: #0a0a0a; padding: 40px; border-radius: 20px; font-weight: 600; }
+        .steps { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; list-style: none; padding: 0; font-size: 1.1rem; }
+        .step { text-align: center; min-width: 120px; }
+        @media (max-width: 768px) { .courses { grid-template-columns: 1fr; } .steps { flex-direction: column; align-items: center; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JYOTISH AUR RAHASYA ACADEMY</h1>
+            <p class="tagline">Bridging Ancient Wisdom with Modern Science</p>
+            <div class="contact">
+                <h3>🌟 Contact Us</h3>
+                <p>📞 +91 8898599721</p>
+                <p>✉️ <a href="mailto:jyotishaurrahasya@gmail.com">jyotishaurrahasya@gmail.com</a></p>
+                <p>📸 <a href="https://www.instagram.com/palmreading" target="_blank">Instagram</a></p>
+            </div>
+        </header>
+
+        <section>
+            <h2>Academy Overview</h2>
+            <p class="overview">Mission to bridge ancient wisdom and modern application. Teach logic, science, and mathematics behind destiny. Courses guide from beginner to professional consultant mastery. [file:1]</p>
+        </section>
+
+        <section>
+            <h2>Our Courses</h2>
+            <div class="courses">
+                <div class="course">
+                    <h3>🪐 Vedic Astrology</h3>
+                    <p>The Science of Light: Zodiac to future predictions.</p>
+                    <ul class="modules">
+                        <li>Foundation: 12 Rashis, 9 Grahas, 12 Bhavas</li>
+                        <li>Chart Analysis: Lagna, Aspects, Yogas</li>
+                        <li>Predictions: Dasha, Transits</li>
+                        <li>Remedies: Gems, Mantras</li>
+                    </ul>
+                </div>
+                <div class="course">
+                    <h3>🔢 Numerology</h3>
+                    <p>Magic of Numbers: Birth date and name vibrations.</p>
+                    <ul class="modules">
+                        <li>Core Numbers & 81 Combinations</li>
+                        <li>Lo Shu Grid & 8 Planes</li>
+                        <li>Name Correction, Mobile, House Numbers</li>
+                    </ul>
+                </div>
+                <div class="course">
+                    <h3>✋ Palmistry</h3>
+                    <p>Destiny in your hands: Hast Rekha.</p>
+                    <ul class="modules">
+                        <li>Hand Shapes & Thumb</li>
+                        <li>Mounts: Jupiter to Moon</li>
+                        <li>Lines & Special Signs</li>
+                        <li>Timing Events</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Fee Structure</h2>
+            <div class="fees">
+                <div class="fee-item">Vedic Astrology<br>2 Months: ₹25,000</div>
+                <div class="fee-item">Numerology<br>2 Weeks: ₹2,000</div>
+                <div class="fee-item">Palmistry<br>1 Month: ₹15,000</div>
+                <p>Special Combos: Grand Master (Save 30%), Astro-Numero (Save 15%)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Student Benefits</h2>
+            <div class="benefits">
+                <div class="benefit">📺 Live Classes & Recordings</div>
+                <div class="benefit">📄 PDF Materials</div>
+                <div class="benefit">🏆 E-Certificate</div>
+                <div class="benefit">💬 Lifetime QA Support</div>
+            </div>
+        </section>
+
+        <section class="enroll">
+            <h2>How to Enroll</h2>
+            <ul class="steps">
+                <li class="step">1. Fill Booking Form</li>
+                <li class="step">2. Pay via UPI: 8898599721-okbizaxis</li>
+                <li class="step">3. WhatsApp Screenshot to +91 8898599721</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
