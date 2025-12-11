@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CosmicSutra — Vedic Astrology, Learning & Consultation</title>
-  <meta name="description" content="CosmicSutra offers structured Vedic astrology learning, occult sciences, and personalised consultations with practical, compassionate guidance." />
+  <meta name="description" content="CosmicSutra offers structured Vedic astrology learning, occult sciences, and personalised consultations with practical, compassionate guidance. View our Jyotish Academy prospectus for complete course details." />
   <style>
     :root{
       --bg:#020617;
@@ -100,12 +100,12 @@
       align-items:center;
       text-align:center;
       gap:14px;
-      background:transparent; /* no card */
+      background:transparent;
     }
     #wheel{
       width:190px;
       height:190px;
-      border-radius:32px;       /* matches SVG rounded corners */
+      border-radius:32px;
       display:block;
       animation:spin 14s linear infinite;
       filter:drop-shadow(0 0 26px rgba(250,204,21,0.55));
@@ -215,6 +215,34 @@
       border:1px solid var(--border);
     }
 
+    /* NEW: Prospectus Link Styles */
+    .prospectus-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: linear-gradient(135deg, rgba(250,204,21,0.15), rgba(249,115,22,0.15));
+      border: 1px solid rgba(250,204,21,0.4);
+      border-radius: 999px;
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 12px;
+      width: 100%;
+      justify-content: center;
+    }
+    .prospectus-link:hover {
+      background: linear-gradient(135deg, rgba(250,204,21,0.25), rgba(249,115,22,0.25));
+      border-color: var(--primary);
+      box-shadow: 0 8px 25px rgba(250,204,21,0.3);
+      transform: translateY(-1px);
+    }
+    .prospectus-link .icon {
+      font-size: 1.1rem;
+    }
+
     .badge-row{
       display:flex;
       flex-wrap:wrap;
@@ -279,6 +307,7 @@
     <nav>
       <a href="#learning">Learning</a>
       <a href="#consultation">Consultation</a>
+      <a href="#prospectus">Prospectus</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -306,6 +335,13 @@
             <div>Occult tools: numerology and Tarot to validate intuition and support prediction.</div>
           </li>
         </ul>
+        
+        <!-- PREMIUM PROSPECTUS LINK -->
+        <a href="./jyotish-prospectus.html" target="_blank" class="prospectus-link" id="prospectus">
+          <span class="icon">📜</span>
+          View Jyotish Academy Prospectus
+        </a>
+        
         <div class="cta-row">
           <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
             Ask about courses
@@ -354,29 +390,8 @@
         <p>Your birth details and session notes are kept confidential and are never shared or sold. Only minimal contact information is stored for scheduling and follow‑up.</p>
         <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;">This site may use basic analytics and standard advertising tools. By using the site, you consent to normal cookies and third‑party scripts used for performance and monetisation.</p>
       </div>
-       
+    </section>
 
-        <div class="card" id="learning">
-          <h2>Structured Learning Path</h2>
-          <p>Learn Vedic astrology step by step, from basics to prediction, with modern explanations rooted in classical texts.</p>
-          <ul class="list">
-            <li><div class="dot"></div><div>Foundations: signs, houses, grahas, and chart structure explained in clear, practical language.</div></li>
-            <li><div class="dot"></div><div>Yogas & dashas: how planetary combinations and timing reveal career, relationships, and spiritual themes.</div></li>
-            <li><div class="dot"></div><div>Occult tools: numerology and Tarot to validate intuition and support prediction.</div></li>
-          </ul>
-          
-          <!-- NEW: Premium Prospectus Link -->
-          <a href="./jyotish-brochure.html" target="_blank" class="prospectus-link" id="prospectus">
-            <span class="icon">📜</span>
-            View Jyotish Academy Prospectus
-          </a>
-          
-          <div class="cta-row">
-            <button class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Ask about courses
-            </button>
-          </div>
-        </div>
     <!-- Right: spinning logo + quick info -->
     <aside class="logo-panel">
       <img id="wheel" src="./cosmic-sutra-logo (1).svg" alt="CosmicSutra Wheel">
@@ -405,10 +420,7 @@
           <strong>Email:</strong>
           <a href="mailto:jyotishaurrahasya@gmail.com">jyotishaurrahasya@gmail.com</a>
         </p>
-        
       </div>
-      
-    </section>
     </aside>
   </div>
 </main>
