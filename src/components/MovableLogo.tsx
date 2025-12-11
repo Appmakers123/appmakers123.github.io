@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import logo from '/logop.jpg'; // place logop.jpg in public root
 
 const MovableLogo: React.FC = () => {
-  const [position, setPosition] = useState({
-    x: window.innerWidth - 80,
-    y: window.innerHeight - 80,
-  });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const offset = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    setPosition({
+      x: window.innerWidth - 80,
+      y: window.innerHeight - 80,
+    });
+  }, []);
 
   const start = (clientX: number, clientY: number) => {
     setIsDragging(true);
@@ -66,14 +69,11 @@ const MovableLogo: React.FC = () => {
         background: 'rgba(15,23,42,0.9)',
         border: '1px solid rgba(245,158,11,0.5)',
         boxShadow: '0 0 20px rgba(245,158,11,0.3)',
-        backdropFilter: 'blur(6px)',
-        transition: 'box-shadow 0.2s ease, transform 0.2s ease',
       }}
-      className={isDragging ? 'dragging' : ''}
       title="Drag me!"
     >
       <img
-        src={logo}
+        src="/logop.jpg"
         alt="CosmicSutra Logo"
         style={{
           width: 48,
