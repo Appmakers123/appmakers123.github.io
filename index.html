@@ -3,18 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
- 
+  <title>CosmicSutra</title>
+
   <!-- AdSense global loader (include ONCE per page) -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3559865379099936"
     crossorigin="anonymous"></script>
-  
-  <!-- Respect Google AdSense policies and terms when using this code. -->
+</head>
+<body style="margin:0;min-height:100vh;background:#020617;">
+
+  <!-- Floating circular logo -->
+  <div id="floating-logo" title="Drag me!">
+    <!-- Make sure logop.jpg is in the same folder as this HTML -->
+    <img src="logop.jpg" alt="CosmicSutra Logo">
+  </div>
+
+  <style>
+    #floating-logo{
+      position:fixed;
+      left:calc(100vw - 88px);   /* bottom-right */
+      top:calc(100vh - 88px);
+      z-index:100;
+      padding:8px;
+      border-radius:50%;
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(245,158,11,0.5);
+      box-shadow:0 0 20px rgba(245,158,11,0.3);
+      cursor:grab;
+      touch-action:none;
+      backdrop-filter:blur(6px);
+      transition:box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    #floating-logo.dragging{
+      cursor:grabbing;
+      transform:scale(0.97);
+    }
+    #floating-logo img{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      object-fit:cover;
+      display:block;
+    }
+  </style>
 
   <script>
- 
-</head>
-<body>
+    (function () {
+      const el = document.getElementById('floating-logo');
+      let isDragging = false;
+      let offsetX = 0;
+      let offsetY = 0;
 
+      function start(clientX, clientY) {
+        const rect = el.getBoundingClientRect();
+        isDragging = true;
+        el.classList.add('dragging');
+        offsetX = clientX - rect.left;
+        offsetY = clientY - rect.top;
+      }
+
+      function move(clientX, clientY) {
+        if (!isDragging) return;
+        let x = clientX - offsetX;
+        let y = clientY - offsetY;
+        const maxX = window.innerWidth - el.offsetWidth;
+        const maxY = window.innerHeight - el.offsetHeight;
+        x = Math.max(0, Math.min(x, maxX));
+        y = Math.max(0, Math.min(y, maxY));
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+      }
+
+      function end() {
+        isDragging = false;
+        el.classList.remove('dragging');
+      }
+
+      el.addEventListener('mousedown', e => {
+        e.preventDefault();
+        start(e.clientX, e.clientY);
+      });
+      window.addEventListener('mousemove', e => move(e.clientX, e.clientY));
+      window.addEventListener('mouseup', end);
+
+      el.addEventListener('touchstart', e => {
+        const t = e.touches[0];
+        start(t.clientX, t.clientY);
+      }, { passive: true });
+      window.addEventListener('touchmove', e => {
+        const t = e.touches[0];
+        move(t.clientX, t.clientY);
+      }, { passive: true });
+      window.addEventListener('touchend', end);
+      window.addEventListener('touchcancel', end);
+    })();
+  </script>
 </body>
 </html>
