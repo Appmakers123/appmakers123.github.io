@@ -15,22 +15,19 @@
       justify-content:center;
     }
 
-    /* Just for centering */
     #wheel-container{
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
-    /* Use the new logo, cropped as a circle and spinning */
+    /* SVG logo as spinning circle */
     #wheel{
       width:180px;
       height:180px;
       border-radius:50%;
-      object-fit:cover;   /* zooms to fill the circle nicely */
       display:block;
       animation: spin 14s linear infinite;
-      box-shadow:0 0 18px rgba(251,191,36,0.8);
     }
 
     @keyframes spin{
@@ -42,7 +39,7 @@
 <body>
 
   <div id="wheel-container">
-    <!-- use the new logo file -->
+    <!-- SVG is in repo root, so use this path -->
     <img id="wheel" src="cosmic-sutra-logo.svg" alt="CosmicSutra Wheel">
   </div>
 
