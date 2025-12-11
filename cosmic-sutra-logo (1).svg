@@ -11,8 +11,9 @@
   cx="256"
   cy="256"
   r="256"
-  fill="#0f172a"
+  fill="#020630"
 />
+
   
   <!-- Background (Optional, dark slate) -->
   <!-- <rect width="512" height="512" fill="#0f172a" rx="64" /> -->
