@@ -3,133 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CosmicSutra</title>
-
-  <!-- AdSense global loader (ready for later use) -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3559865379099936"
-    crossorigin="anonymous"></script>
+  <title>CosmicSutra Wheel</title>
 
   <style>
     body{
       margin:0;
       min-height:100vh;
       background:radial-gradient(circle at 20% 0,#111827 0,#020617 55%,#000 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:#e5e7eb;
     }
 
-    /* Center text just so page isn't empty */
-    .center-text{
-      position:absolute;
-      inset:0;
+    /* Centered wheel container */
+    #wheel-container{
+      width:160px;
+      height:160px;
+      border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      pointer-events:none;
+      background:transparent;
     }
 
-   /* Floating logo container – subtle, no extra wheel */
-#floating-logo{
-  position:fixed;
-  left:calc(100vw - 90px);   /* bottom-right */
-  top:calc(100vh - 90px);
-  z-index:100;
-  padding:4px;
-  border-radius:50%;
-  background:rgba(15,23,42,0.0);    /* transparent, no visible outer disk */
-  border:none;                      /* remove outer ring */
-  box-shadow:none;                  /* remove big glow wheel */
-  cursor:grab;
-  touch-action:none;
-  transition:transform 0.2s ease;
-}
-#floating-logo.dragging{
-  cursor:grabbing;
-  transform:scale(0.96);
-}
+    /* Inner rolling wheel */
+    #wheel{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      display:block;
+      box-shadow:0 0 18px rgba(251,191,36,0.9);
+      animation: spin 12s linear infinite;  /* continuous rolling */
+    }
 
-/* Only the logo wheel is visible & movable */
-#floating-logo img{
-  width:70px;
-  height:70px;
-  border-radius:50%;
-  object-fit:cover;
-  display:block;
-  box-shadow:0 0 14px rgba(251,191,36,0.9); /* small glow on the wheel itself */
-}
-
+    @keyframes spin{
+      from{ transform:rotate(0deg); }
+      to{ transform:rotate(360deg); }
+    }
   </style>
 </head>
 <body>
 
-  <div class="center-text">
-    <div>
-      <h1 style="margin:0 0 8px;font-size:1.6rem;">CosmicSutra</h1>
-      <p style="margin:0;font-size:0.95rem;opacity:0.8;">
-        Astrology Learning • Occult Science • Consultation
-      </p>
-    </div>
+  <!-- Centered rolling wheel -->
+  <div id="wheel-container">
+    <!-- logop.jpg must be in the same folder as this HTML -->
+    <img id="wheel" src="logop.jpg" alt="CosmicSutra Wheel">
   </div>
 
-  <!-- Floating glowing logo (make sure logop.jpg is in same directory) -->
-  <div id="floating-logo" title="Drag me!">
-    <img src="logop.jpg" alt="CosmicSutra Logo">
-  </div>
-
-  <script>
-    (function () {
-      const el = document.getElementById('floating-logo');
-      let isDragging = false;
-      let offsetX = 0;
-      let offsetY = 0;
-
-      function start(clientX, clientY) {
-        const rect = el.getBoundingClientRect();
-        isDragging = true;
-        el.classList.add('dragging');
-        offsetX = clientX - rect.left;
-        offsetY = clientY - rect.top;
-      }
-
-      function move(clientX, clientY) {
-        if (!isDragging) return;
-        let x = clientX - offsetX;
-        let y = clientY - offsetY;
-
-        const maxX = window.innerWidth - el.offsetWidth;
-        const maxY = window.innerHeight - el.offsetHeight;
-        x = Math.max(0, Math.min(x, maxX));
-        y = Math.max(0, Math.min(y, maxY));
-
-        el.style.left = x + 'px';
-        el.style.top = y + 'px';
-      }
-
-      function end() {
-        isDragging = false;
-        el.classList.remove('dragging');
-      }
-
-      el.addEventListener('mousedown', e => {
-        e.preventDefault();
-        start(e.clientX, e.clientY);
-      });
-      window.addEventListener('mousemove', e => move(e.clientX, e.clientY));
-      window.addEventListener('mouseup', end);
-
-      el.addEventListener('touchstart', e => {
-        const t = e.touches[0];
-        start(t.clientX, t.clientY);
-      }, { passive: true });
-      window.addEventListener('touchmove', e => {
-        const t = e.touches[0];
-        move(t.clientX, t.clientY);
-      }, { passive: true });
-      window.addEventListener('touchend', end);
-      window.addEventListener('touchcancel', end);
-    })();
-  </script>
 </body>
 </html>
