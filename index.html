@@ -1,526 +1,226 @@
-<!-- FILE: README.txt -->
-CosmicSutra - Traditional Vedic multi-page website
-
-Files included:
-- index.html
-- about.html
-- learning.html
-- consultation.html
-- contact.html
-- privacy.html
-- styles.css
-- logo.svg
-
-Instructions:
-1. Place all files in the root of your GitHub Pages repository (or any static host).
-2. Add your AdSense 'ca-pub-xxxxxxxxxx' code into the <!-- ADSENSE: PLACEHOLDER --> spots in each HTML file's <head>.
-3. Replace contact email and other placeholders as needed.
-
----
-
-<!-- FILE: styles.css -->
-/* Traditional Vedic theme: maroon, gold, cream */
-:root{
-  --bg:#f7efe6;
-  --primary:#6b2436; /* maroon */
-  --accent:#c9a34a; /* gold */
-  --dark:#2b1b24;
-  --card:#fff6ea;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:"Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
-.container{max-width:1100px;margin:0 auto;padding:24px}
-.header{background:linear-gradient(90deg,var(--primary),#4e1830);color:white;padding:28px 0;text-align:center}
-.header .title{font-size:36px;letter-spacing:2px;margin:0}
-.header .tag{margin-top:6px;opacity:0.92}
-nav{background:var(--dark);display:flex;justify-content:center;padding:10px 0}
-nav a{color:var(--bg);text-decoration:none;margin:0 14px;padding:6px 10px;border-radius:6px;font-weight:600}
-nav a:hover{background:rgba(255,255,255,0.04)}
-.hero{background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;color:white;padding:80px 0;text-align:center}
-.hero h2{font-size:36px;margin:0;text-shadow:0 3px 12px rgba(0,0,0,0.6)}
-.grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:24px}
-.card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(35,30,30,0.06)}
-.card h3{margin-top:0;color:var(--primary)}
-.services{display:flex;flex-wrap:wrap;gap:12px}
-.service{flex:1 1 200px;background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);padding:12px;border-radius:8px;border-left:4px solid var(--accent)}
-.cta{display:inline-block;margin-top:12px;padding:10px 16px;background:var(--accent);color:var(--dark);font-weight:700;border-radius:8px;text-decoration:none}
-.footer{background:var(--primary);color:white;padding:18px;text-align:center;margin-top:28px}
-.footer small{opacity:0.9}
-.contact-form input,.contact-form textarea{width:100%;padding:10px;margin-top:8px;border-radius:6px;border:1px solid #e6d9c6;background:transparent}
-@media(max-width:880px){.grid{grid-template-columns:1fr}.hero{padding:48px 20px}.header .title{font-size:28px}}
-
-/* Simple mandala logo sizing */
-.logo{height:64px;width:64px}
-
-/* blog list */
-.list{list-style:none;padding:0;margin:0}
-.list li{padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.05)}
-
-/* privacy */
-.policy p{margin:0 0 14px 0}
-
-/* small helper */
-.muted{color:#6b6b6b;font-size:14px}
-
-
-<!-- FILE: logo.svg -->
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="CosmicSutra logo">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#c9973a"/>
-      <stop offset="1" stop-color="#f3deb2"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="none"/>
-  <circle cx="100" cy="100" r="72" fill="#5b2a3a"/>
-  <!-- Sun center -->
-  <circle cx="100" cy="80" r="26" fill="url(#g)" stroke="#6b2436" stroke-width="3"/>
-  <!-- 12 zodiac markers -->
-  <g transform="translate(100,100)">
-    <!-- create 12 small points -->
-    <!-- using a loop would be nicer but svg is static -->
-    <g fill="#f3deb2">
-      <circle cx="0" cy="-86" r="6"/>
-      <circle cx="60" cy="-60" r="6"/>
-      <circle cx="86" cy="0" r="6"/>
-      <circle cx="60" cy="60" r="6"/>
-      <circle cx="0" cy="86" r="6"/>
-      <circle cx="-60" cy="60" r="6"/>
-      <circle cx="-86" cy="0" r="6"/>
-      <circle cx="-60" cy="-60" r="6"/>
-      <circle cx="30" cy="-86" r="4"/>
-      <circle cx="-30" cy="-86" r="4"/>
-      <circle cx="86" cy="30" r="4"/>
-      <circle cx="-86" cy="-30" r="4"/>
-    </g>
-  </g>
-</svg>
-
-
-<!-- FILE: index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CosmicSutra — Astrology Learning, Occult Science & Consultation</title>
-  <meta name="description" content="CosmicSutra: Traditional Vedic astrology learning, occult science resources, and personalized consultations." />
-
+  <meta name="description" content="CosmicSutra: Traditional Vedic astrology learning, occult sciences, and personalised consultations." />
   <!-- ADSENSE: PLACEHOLDER -->
-  <!-- Insert your AdSense verification/ads code here -->
+  <!-- Insert your AdSense verification/ads code (from Ads > Sites) here, before </head> -->
 
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{
+      --bg:#f7efe6;
+      --primary:#6b2436;
+      --accent:#c9a34a;
+      --dark:#2b1b24;
+      --card:#fff6ea;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:20px}
+    header{background:linear-gradient(90deg,var(--primary),#4e1830);color:white;padding:22px 12px;text-align:center;border-bottom:6px solid rgba(0,0,0,0.06)}
+    .brand{display:flex;gap:12px;align-items:center;justify-content:center}
+    .logo{width:64px;height:64px;flex:0 0 64px}
+    h1{font-size:28px;margin:0;letter-spacing:1px}
+    .tag{opacity:0.95;margin-top:6px;font-size:14px}
+
+    nav{display:flex;justify-content:center;gap:10px;padding:12px;background:var(--dark)}
+    nav a{color:var(--bg);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px}
+    nav a:hover{background:rgba(255,255,255,0.04)}
+
+    .hero{background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;color:white;padding:70px 16px;text-align:center}
+    .hero h2{font-size:34px;margin:0;text-shadow:0 4px 18px rgba(0,0,0,0.6)}
+    .hero p{opacity:0.95;margin-top:10px}
+
+    main{padding:26px 12px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 8px 26px rgba(30,25,25,0.06)}
+    .card h2{margin-top:0;color:var(--primary)}
+    .services{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+    .service{padding:12px;border-radius:8px;border-left:4px solid var(--accent);background:linear-gradient(#fff,#fff9f0)}
+    .cta{display:inline-block;margin-top:12px;padding:10px 14px;background:var(--accent);color:var(--dark);font-weight:700;border-radius:8px;text-decoration:none}
+    aside .card + .card{margin-top:16px}
+
+    footer{background:var(--primary);color:white;padding:18px;text-align:center;margin-top:28px}
+    .muted{color:#666;font-size:14px}
+
+    /* contact form */
+    form .row{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+    input[type="text"], input[type="email"], textarea{padding:10px;border-radius:8px;border:1px solid #e6d9c6;background:transparent;font-size:15px}
+    button[type="submit"]{cursor:pointer;border:0;padding:10px 14px;border-radius:8px;background:var(--primary);color:white;font-weight:700}
+
+    /* privacy small */
+    .policy small{color:#4a3a3c}
+
+    @media(max-width:920px){
+      .grid{grid-template-columns:1fr}
+      .hero{padding:48px 12px}
+      h1{font-size:22px}
+    }
+    a.inline-link{color:var(--primary);text-decoration:underline}
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;gap:16px;justify-content:center;flex-direction:row;">
-      <img src="logo.svg" alt="CosmicSutra logo" class="logo">
+  <header>
+    <div class="wrap brand">
+      <!-- inline simple SVG logo -->
+      <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CosmicSutra logo">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#c9973a"/>
+            <stop offset="1" stop-color="#f3deb2"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="72" fill="#5b2a3a"/>
+        <circle cx="100" cy="76" r="26" fill="url(#g)" stroke="#6b2436" stroke-width="3"/>
+        <g transform="translate(100,100)" fill="#f3deb2">
+          <circle cx="0" cy="-86" r="6"/>
+          <circle cx="60" cy="-60" r="6"/>
+          <circle cx="86" cy="0" r="6"/>
+          <circle cx="60" cy="60" r="6"/>
+          <circle cx="0" cy="86" r="6"/>
+          <circle cx="-60" cy="60" r="6"/>
+          <circle cx="-86" cy="0" r="6"/>
+          <circle cx="-60" cy="-60" r="6"/>
+        </g>
+      </svg>
+
       <div style="text-align:center">
-        <h1 class="title">CosmicSutra</h1>
+        <h1>CosmicSutra</h1>
         <div class="tag">Astrology Learning • Occult Science • Consultation</div>
       </div>
     </div>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="learning.html">Learning</a>
-    <a href="consultation.html">Consultation</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#learning">Learning</a>
+    <a href="#consultation">Consultation</a>
+    <a href="#contact">Contact</a>
+    <a href="#privacy">Privacy</a>
   </nav>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Traditional Vedic Wisdom. Practical Guidance.</h2>
-      <p class="muted">Decode your chart, discover your dharma, and align with cosmic rhythms.</p>
+  <section id="home" class="hero">
+    <div class="wrap">
+      <h2>Traditional Vedic Wisdom — Practical Guidance</h2>
+      <p class="muted">Decode your birth chart, discover your dharma, and align with cosmic rhythms.</p>
     </div>
   </section>
 
-  <main class="container">
+  <main class="wrap">
     <div class="grid">
       <div>
-        <div class="card">
-          <h3>Welcome to CosmicSutra</h3>
-          <p>CosmicSutra brings together authentic Vedic astrology, occult sciences like numerology and tarot, and personalized consultations to help you navigate life’s questions with clarity and purpose.</p>
-
-          <h4>Why CosmicSutra?</h4>
+        <section class="card" id="about">
+          <h2>About CosmicSutra</h2>
+          <p>CosmicSutra brings authentic Vedic astrology, occult sciences, and compassionate guidance to seekers. We teach classical methods in a clear, practical way — suitable for beginners and committed students.</p>
+          <h3 style="margin-top:14px">Our Offerings</h3>
           <ul>
-            <li>Teacher-led, easy-to-follow astrology lessons</li>
-            <li>Practical chart-reading techniques</li>
-            <li>Personal consultations grounded in classical methods</li>
-            <li>Ethical, compassionate guidance</li>
+            <li>Structured astrology courses (foundations → predictive)</li>
+            <li>Numerology & Tarot as complementary tools</li>
+            <li>Personal consultations with actionable remedies</li>
+            <li>Free resources: glossary, quick charts, sample worksheets</li>
           </ul>
+          <a class="cta" href="#learning">Explore Learning</a>
+        </section>
 
-          <a class="cta" href="learning.html">Start Learning</a>
-        </div>
+        <section class="card" id="learning" style="margin-top:18px">
+          <h2>Learning — Courses & Resources</h2>
+          <div class="services">
+            <div class="service">
+              <strong>Beginners: Foundations of Vedic Astrology</strong>
+              <div class="muted">Lagna, signs, houses, planets — the essentials to read a chart.</div>
+            </div>
+            <div class="service">
+              <strong>Intermediate: Yogas & Dashas</strong>
+              <div class="muted">Important planetary combinations, timing & prediction methods.</div>
+            </div>
+            <div class="service">
+              <strong>Tarot & Numerology</strong>
+              <div class="muted">Intuitive tools that support timing and personal insight.</div>
+            </div>
+            <div class="service">
+              <strong>Practical Chart Reading</strong>
+              <div class="muted">Case studies, exercises and remediation guidance.</div>
+            </div>
+          </div>
+          <p style="margin-top:12px">Courses are modular and self-paced, with optional mentorship. For group or private course enquires, contact us.</p>
+        </section>
 
-        <div class="card" style="margin-top:16px">
-          <h3>Latest Articles</h3>
-          <ul class="list">
-            <li><a href="#">Understanding Lagna: The Foundation of the Chart</a></li>
-            <li><a href="#">Mars in Houses: Energy & Karma</a></li>
-            <li><a href="#">Introduction to Nakshatras</a></li>
+        <section class="card" id="consultation" style="margin-top:18px">
+          <h2>Consultation Services</h2>
+          <p>We offer structured readings tailored to your needs. Each session includes a full chart reading, timing analysis, and practical guidance.</p>
+          <h4>Session Types</h4>
+          <ul>
+            <li><strong>Basic Reading (30 min)</strong> — Quick insights & immediate guidance.</li>
+            <li><strong>Full Reading (60 min)</strong> — Detailed analysis, timing & remedies.</li>
+            <li><strong>Focus Session</strong> — Career, relationships, or spiritual direction.</li>
           </ul>
-        </div>
+          <ol style="margin-top:8px">
+            <li>Send birth details (date, time, place)</li>
+            <li>Choose the session type</li>
+            <li>Receive calendar link & payment instructions</li>
+          </ol>
+          <p><strong>Email:</strong> <a class="inline-link" href="mailto:cosmicsutra@gmail.com">cosmicsutra@gmail.com</a> (replace with your business email)</p>
+          <a class="cta" href="#contact">Request a Consultation</a>
+        </section>
 
-        <div class="card" style="margin-top:16px">
-          <h3>Free Resources</h3>
-          <p>Downloadable basics, a glossary of Sanskrit terms, and quick reference charts to help you learn faster.</p>
-          <a class="cta" href="learning.html">View Resources</a>
-        </div>
+        <!-- Privacy summary visible here for readers and for AdSense requirement -->
+        <section class="card policy" id="privacy" style="margin-top:18px">
+          <h2>Privacy & Ads</h2>
+          <p>We take privacy seriously. We collect contact details for consultations and subscribe lists, and use analytics to improve the site. We do not sell personal data. If you enable ads (AdSense) Google may collect anonymized information as per their policies.</p>
+          <small>Last updated: December 11, 2025</small>
+        </section>
       </div>
 
       <aside>
         <div class="card">
-          <h3>Consultation</h3>
-          <p>Personal readings for career, relationships, and spiritual direction. 45–60 minute sessions with detailed chart analysis.</p>
-          <a class="cta" href="consultation.html">Book a Session</a>
+          <h2>Get Started</h2>
+          <p class="muted">Begin with a free resource pack or book a consultation for a personal reading.</p>
+          <a class="cta" href="#contact">Contact Us</a>
         </div>
 
-        <div class="card" style="margin-top:16px">
+        <div class="card">
           <h3>Subscribe</h3>
-          <p class="muted">Weekly horoscope & learning tips — delivered to your inbox.</p>
-          <form action="#" class="contact-form">
-            <input type="email" placeholder="Your email" aria-label="email" required>
-            <button class="cta" style="width:100%;margin-top:10px" type="submit">Subscribe</button>
+          <p class="muted">Weekly horoscope & learning tips</p>
+          <form action="#" onsubmit="event.preventDefault(); alert('Thanks — subscription placeholder (replace with real mail setup)');">
+            <div class="row">
+              <input type="email" placeholder="Email address" required aria-label="email">
+              <button type="submit">Subscribe</button>
+            </div>
           </form>
         </div>
 
         <div class="card" style="margin-top:16px">
-          <h3>AdSense Placeholder</h3>
-          <div style="background:#efe5d0;padding:12px;border-radius:8px;text-align:center">Your Ad Goes Here</div>
+          <h3>Ad / Promotion</h3>
+          <div style="background:#efe5d0;padding:12px;border-radius:8px;text-align:center">
+            <!-- Example AdSense slot placeholder. Replace with actual AdSense ad code. -->
+            Your Ad Goes Here
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Contact</h3>
+          <p>Email: <a class="inline-link" href="mailto:cosmicsutra@gmail.com">cosmicsutra@gmail.com</a></p>
+          <p class="muted">For bookings include birth date, time & place.</p>
         </div>
       </aside>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <small>&copy; 2025 CosmicSutra • All Rights Reserved • <a href="privacy.html" style="color:#f7efe6">Privacy Policy</a></small>
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div style="color:#fff">&copy; 2025 CosmicSutra</div>
+      <div><a href="#privacy" style="color:#f7efe6;text-decoration:underline">Privacy Policy</a></div>
     </div>
   </footer>
-</body>
-</html>
 
-
-<!-- FILE: about.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — CosmicSutra</title>
-  <meta name="description" content="About CosmicSutra — our mission, vision and the teachers behind the platform." />
-  <!-- ADSENSE: PLACEHOLDER -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;gap:16px;justify-content:center;">
-      <img src="logo.svg" alt="CosmicSutra logo" class="logo">
-      <div style="text-align:center">
-        <h1 class="title">CosmicSutra</h1>
-        <div class="tag">Astrology Learning • Occult Science • Consultation</div>
-      </div>
-    </div>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="learning.html">Learning</a>
-    <a href="consultation.html">Consultation</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-
-  <main class="container">
-    <div class="card" style="margin-top:24px">
-      <h2>Our Story</h2>
-      <p>CosmicSutra began as a small circle of students and practitioners of Vedic astrology who wanted to make traditional teachings accessible and practical. We blend classical techniques with modern, compassionate counselling to help people make informed choices.</p>
-
-      <h3>Mission</h3>
-      <p>To preserve, teach and apply Vedic astrological wisdom responsibly — helping seekers understand their inner maps and make empowered choices.</p>
-
-      <h3>What We Teach</h3>
-      <ul>
-        <li>Birth chart fundamentals (Lagna, houses, planets)</li>
-        <li>Yogas, dashas and predictive methods</li>
-        <li>Remedial measures and ethical guidance</li>
-        <li>Complementary occult sciences: numerology & tarot</li>
-      </ul>
-
-      <h3>Meet the Teacher</h3>
-      <p><strong>Senior Astrologer:</strong> An experienced practitioner trained in classical Vedic methods. (Bio placeholder — replace with real bio.)</p>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <small>&copy; 2025 CosmicSutra</small>
-    </div>
-  </footer>
-</body>
-</html>
-
-
-<!-- FILE: learning.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Learning — CosmicSutra</title>
-  <meta name="description" content="Courses, resources and beginner guides for Vedic astrology, numerology and tarot." />
-  <!-- ADSENSE: PLACEHOLDER -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;gap:16px;justify-content:center;">
-      <img src="logo.svg" alt="CosmicSutra logo" class="logo">
-      <div style="text-align:center">
-        <h1 class="title">CosmicSutra</h1>
-        <div class="tag">Learning • Courses • Resources</div>
-      </div>
-    </div>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="learning.html">Learning</a>
-    <a href="consultation.html">Consultation</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-
-  <main class="container">
-    <div class="card" style="margin-top:24px">
-      <h2>Courses & Topics</h2>
-      <div class="services">
-        <div class="service">
-          <h4>Beginners: Foundations of Vedic Astrology</h4>
-          <p>Understand the houses, signs, lagna, and basic chart interpretation.</p>
-        </div>
-        <div class="service">
-          <h4>Intermediate: Yogas & Dashas</h4>
-          <p>Explore important yogas, planetary periods and prediction techniques.</p>
-        </div>
-        <div class="service">
-          <h4>Tarot & Numerology</h4>
-          <p>Complementary occult systems for intuitive insights and timing.</p>
-        </div>
-        <div class="service">
-          <h4>Practical Chart Reading</h4>
-          <p>Case studies, chart exercises, and remedial recommendations.</p>
-        </div>
-      </div>
-
-      <h3 style="margin-top:16px">Free Resources</h3>
-      <ul>
-        <li>Glossary of Sanskrit terms</li>
-        <li>Quick planetary reference PDF</li>
-        <li>Sample chart PDFs and exercises</li>
-      </ul>
-
-      <p>Courses are modular: study at your pace, with optional one-on-one mentorship.</p>
-      <a class="cta" href="contact.html">Join a Course</a>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <small>&copy; 2025 CosmicSutra</small>
-    </div>
-  </footer>
-</body>
-</html>
-
-
-<!-- FILE: consultation.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Consultation — CosmicSutra</title>
-  <meta name="description" content="Book a personal astrology consultation with CosmicSutra." />
-  <!-- ADSENSE: PLACEHOLDER -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;gap:16px;justify-content:center;">
-      <img src="logo.svg" alt="CosmicSutra logo" class="logo">
-      <div style="text-align:center">
-        <h1 class="title">CosmicSutra</h1>
-        <div class="tag">Consultation • Readings • Guidance</div>
-      </div>
-    </div>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="learning.html">Learning</a>
-    <a href="consultation.html">Consultation</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-
-  <main class="container">
-    <div class="card" style="margin-top:24px">
-      <h2>Personal Consultation Services</h2>
-      <p>We offer structured consultations tailored to your needs. Each session includes a full chart reading, timing analysis, and practical guidance.</p>
-
-      <h3>Session Types</h3>
-      <ul>
-        <li><strong>Basic Reading (30 min)</strong> — Key insights and quick guidance.</li>
-        <li><strong>Full Reading (60 min)</strong> — Detailed chart analysis with remedies.</li>
-        <li><strong>Career / Relationship Focus</strong> — Targeted guidance and timing.</li>
-      </ul>
-
-      <h3>How to Book</h3>
-      <ol>
-        <li>Contact us with your birth details (date, time, place)</li>
-        <li>Choose session type</li>
-        <li>Receive calendar link and payment instructions</li>
-      </ol>
-
-      <p><strong>Contact:</strong> cosmicsutra@gmail.com (replace with your business email)</p>
-
-      <a class="cta" href="contact.html">Request a Consultation</a>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <small>&copy; 2025 CosmicSutra</small>
-    </div>
-  </footer>
-</body>
-</html>
-
-
-<!-- FILE: contact.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — CosmicSutra</title>
-  <meta name="description" content="Contact CosmicSutra for consultations, courses, and enquiries." />
-  <!-- ADSENSE: PLACEHOLDER -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;gap:16px;justify-content:center;">
-      <img src="logo.svg" alt="CosmicSutra logo" class="logo">
-      <div style="text-align:center">
-        <h1 class="title">CosmicSutra</h1>
-        <div class="tag">Get in touch</div>
-      </div>
-    </div>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="learning.html">Learning</a>
-    <a href="consultation.html">Consultation</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-
-  <main class="container">
-    <div class="card" style="margin-top:24px">
-      <h2>Contact Us</h2>
-      <p>For consultations, courses or partnership enquiries, please get in touch.</p>
-      <form action="mailto:cosmicsutra@gmail.com" method="post" enctype="text/plain" class="contact-form">
-        <label for="name">Full name</label>
-        <input id="name" name="name" placeholder="Your name" required>
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" placeholder="Tell us briefly..." required></textarea>
-
-        <button class="cta" type="submit">Send Message</button>
-      </form>
-
-      <h3 style="margin-top:18px">Business Email</h3>
-      <p><a href="mailto:cosmicsutra@gmail.com">cosmicsutra@gmail.com</a></p>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <small>&copy; 2025 CosmicSutra</small>
-    </div>
-  </footer>
-</body>
-</html>
-
-
-<!-- FILE: privacy.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy — CosmicSutra</title>
-  <meta name="description" content="Privacy policy for CosmicSutra." />
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;gap:16px;justify-content:center;">
-      <img src="logo.svg" alt="CosmicSutra logo" class="logo">
-      <div style="text-align:center">
-        <h1 class="title">CosmicSutra</h1>
-        <div class="tag">Privacy Policy</div>
-      </div>
-    </div>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="learning.html">Learning</a>
-    <a href="consultation.html">Consultation</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-
-  <main class="container">
-    <div class="card policy" style="margin-top:24px">
-      <h2>Privacy Policy</h2>
-      <p>This Privacy Policy explains how CosmicSutra collects, uses, and protects personal information provided by users.</p>
-
-      <h3>Information We Collect</h3>
-      <p>We may collect name, email address, consultation details, and payment information when you book services. We also collect non-identifying analytics data via standard web analytics tools.</p>
-
-      <h3>How We Use Your Information</h3>
-      <p>To respond to enquiries, provide consultations, process payments, and send updates if you subscribe. We do not sell personal data to third parties.</p>
-
-      <h3>Cookies & Ads</h3>
-      <p>We may use cookies for basic site functionality and analytics. If you enable ads (AdSense), Google may collect anonymized information as per their policies.</p>
-
-      <h3>Security</h3>
-      <p>We aim to protect user data with reasonable safeguards but cannot guarantee absolute security over the internet.</p>
-
-      <h3>Contact</h3>
-      <p>For any privacy concerns: <a href="mailto:cosmicsutra@gmail.com">cosmicsutra@gmail.com</a></p>
-
-      <p style="margin-top:8px"><small>Last updated: December 11, 2025</small></p>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <small>&copy; 2025 CosmicSutra</small>
-    </div>
-  </footer>
+  <!-- Simple client-side copy of privacy text for robots/AdSense -->
+  <div style="display:none">
+    <h3>Privacy Policy — CosmicSutra</h3>
+    <p>CosmicSutra collects name, email and booking details to provide consultations. We use cookies and analytics. We do not sell personal data. For privacy questions email cosmicsutra@gmail.com</p>
+  </div>
 </body>
 </html>
