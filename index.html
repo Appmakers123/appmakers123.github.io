@@ -15,13 +15,6 @@
       justify-content:center;
     }
 
-    #wheel-container{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    /* SVG logo as spinning circle */
     #wheel{
       width:180px;
       height:180px;
@@ -38,10 +31,8 @@
 </head>
 <body>
 
-  <div id="wheel-container">
-    <!-- SVG is in repo root, so use this path -->
-    <img id="wheel" src="cosmic-sutra-logo.svg" alt="CosmicSutra Wheel">
-  </div>
+  <!-- SVG file is in repo root, so use relative path -->
+  <img id="wheel" src="./cosmic-sutra-logo.svg" alt="CosmicSutra Wheel">
 
 </body>
 </html>
