@@ -15,22 +15,22 @@
       justify-content:center;
     }
 
-    /* Container = just for centering, no visible circle */
+    /* Just for centering */
     #wheel-container{
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
-    /* Only the logo itself, no outer circle */
+    /* Use the new logo, cropped as a circle and spinning */
     #wheel{
-      width:140px;          /* same as logo size */
-      height:140px;
+      width:180px;
+      height:180px;
       border-radius:50%;
-      object-fit:cover;
+      object-fit:cover;   /* zooms to fill the circle nicely */
       display:block;
-      animation: spin 12s linear infinite;
-      box-shadow:0 0 18px rgba(251,191,36,0.9); /* remove if you want zero glow */
+      animation: spin 14s linear infinite;
+      box-shadow:0 0 18px rgba(251,191,36,0.8);
     }
 
     @keyframes spin{
@@ -42,8 +42,8 @@
 <body>
 
   <div id="wheel-container">
-    <!-- logop.jpg must be the circular logo file -->
-    <img id="wheel" src="logop.jpg" alt="CosmicSutra Wheel">
+    <!-- use the new logo file -->
+    <img id="wheel" src="cosmic-sutra-logo.jpg" alt="CosmicSutra Wheel">
   </div>
 
 </body>
