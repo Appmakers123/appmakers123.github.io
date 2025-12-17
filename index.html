@@ -237,6 +237,68 @@
             width: 100% !important;
             margin: 0 auto;
         }
+
+        /* CTA steps styling */
+        .cta-steps-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #111827;
+            margin: 32px 0 12px;
+        }
+
+        .cta-steps {
+            counter-reset: cta-step;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 18px 0 0;
+            list-style: none;
+        }
+
+        .cta-steps .cta-step {
+            position: relative;
+            min-width: 220px;
+            padding: 12px 18px 12px 46px;
+            border-radius: 999px;
+            background: rgba(17, 24, 39, 0.08);
+            color: #111827;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+            backdrop-filter: blur(8px);
+        }
+
+        .cta-steps .cta-step::before {
+            counter-increment: cta-step;
+            content: counter(cta-step);
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+            color: #111827;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 2px rgba(17,24,39,0.4), 0 8px 16px rgba(0,0,0,0.25);
+        }
+
+        .cta-steps .cta-step:hover {
+            box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
             .services-grid, .pricing {
                 grid-template-columns: 1fr;
@@ -248,6 +310,11 @@
             .ads-container {
                 margin: 60px 0;
                 padding: 24px 16px;
+            }
+            .cta-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
             }
         }
         .privacy-footer {
@@ -313,12 +380,12 @@
                         <li>No fear-based predictions</li>
                     </ul>
                 </div>
-                 <div class="service-card">
+                <div class="service-card">
                     <div class="service-icon">🤝</div>
-                       <a href="./jyotish-brochure.html" class="btn" target="_blank" rel="noopener">
-                          View Jyotish Academy Prospectus
-                        </a>
-                  </div>
+                    <a href="./jyotish-brochure.html" class="btn" target="_blank" rel="noopener">
+                        View Jyotish Academy Prospectus
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -397,10 +464,22 @@
         <!-- CTA -->
         <section class="cta-section">
             <h2>Ready to Unlock Your Destiny?</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 32px;">Provide your birth details and receive guidance within 48 hours</p>
+            <p style="font-size: 1.3rem; margin-bottom: 24px;">Provide your birth details and receive guidance within 48 hours.</p>
             <a href="https://docs.google.com/forms/d/1sqPov550rY7jjUwkLcHJhCpvinYiYsBvvzVGtek3F1Q/viewform" class="btn" target="_blank" rel="noopener">
                 Start Your Reading Journey
             </a>
+
+            <h3 class="cta-steps-title">Simple Booking Steps</h3>
+            <ul class="cta-steps">
+                <li class="cta-step">Fill the booking form with accurate birth details.</li>
+                <li class="cta-step">
+                    Complete payment via UPI 8898599721-okbizaxis<br>
+                    <span style="font-weight:500;font-size:0.9rem;">
+                        or via PayPal: <strong>jyotishaurrahasya@gmail.com</strong>
+                    </span>
+                </li>
+                <li class="cta-step">Receive confirmation and scheduled reading details on WhatsApp/email.</li>
+            </ul>
         </section>
     </div>
 
