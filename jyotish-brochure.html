@@ -10,7 +10,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3559865379099936" crossorigin="anonymous"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
         
         @media (prefers-color-scheme: dark) {
             :root {
@@ -248,25 +248,66 @@
             margin: 40px auto;
             max-width: 900px;
         }
-        
-        .steps { 
-            display: flex; 
-            justify-content: center; 
-            gap: 35px; 
-            flex-wrap: wrap; 
-            list-style: none; 
-            padding: 0; 
-            font-size: 1.2rem; 
-            margin-top: 25px;
+
+        /* Updated title + steps styling */
+        .enroll-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #111827;
+            margin-bottom: 18px;
         }
-        
-        .step { 
-            text-align: center; 
-            min-width: 140px; 
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            font-weight: 500;
+
+        .enroll-steps {
+            counter-reset: enroll-step;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 24px 0 0;
+            list-style: none;
+        }
+
+        .enroll-steps .step {
+            position: relative;
+            min-width: 180px;
+            padding: 14px 18px 14px 46px;
+            border-radius: 999px;
+            background: rgba(17, 24, 39, 0.08);
+            color: #111827;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.98rem;
+            font-weight: 600;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+            backdrop-filter: blur(8px);
+        }
+
+        .enroll-steps .step::before {
+            counter-increment: enroll-step;
+            content: counter(enroll-step);
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #facc15, #f97316);
+            color: #111827;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 2px rgba(17,24,39,0.4), 0 8px 16px rgba(0,0,0,0.25);
+        }
+
+        .enroll-steps .step:hover {
+            box-shadow: 0 18px 36px rgba(0,0,0,0.25);
+            transform: translateY(-2px);
         }
         
         .ads-container {
@@ -287,7 +328,7 @@
         
         @media (max-width: 768px) { 
             .courses { grid-template-columns: 1fr; gap: 25px; } 
-            .steps { flex-direction: column; align-items: center; gap: 20px; }
+            .enroll-steps { flex-direction: column; align-items: center; gap: 20px; }
             .fee-item { display: block; margin: 15px 0; }
             .ads-container { margin: 60px 0; padding: 30px 15px; }
         }
@@ -389,11 +430,11 @@
         </section>
 
         <section class="enroll">
-            <h2>How to Enroll</h2>
-            <ul class="steps">
-                <li class="step">1. Fill Booking Form</li>
-                <li class="step">2. Pay via UPI: 8898599721-okbizaxis</li>
-                <li class="step">3. WhatsApp Screenshot to +91 8898599721</li>
+            <h2 class="enroll-title">How to Enroll</h2>
+            <ul class="enroll-steps">
+                <li class="step">Fill Booking Form</li>
+                <li class="step">Pay via UPI: 8898599721-okbizaxis</li>
+                <li class="step">WhatsApp Screenshot to +91 8898599721</li>
             </ul>
         </section>
     </div>
